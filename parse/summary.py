@@ -80,7 +80,7 @@ class AnswerInfo:
                         # logger.info(answer_can_comment_status)
                         # logger.info(answer_comment_count)
                         # logger.info(answer_comment_permission)
-                        logger.info(answer_content)
+                        # logger.info(answer_content)
                         # logger.info(answer_voteup_count)
                         # logger.info(answer_updated_time)
                         # logger.info(answer_created_time)

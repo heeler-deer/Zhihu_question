@@ -47,7 +47,6 @@ class CustomLogger:
 
 
 if __name__ == '__main__':
-    # Example usage:
     custom_logger = CustomLogger()
     logger = custom_logger.get_logger()
     logger.info("This is an example info message.")
