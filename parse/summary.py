@@ -26,7 +26,8 @@ class AnswerInfo:
         answer_comment_permission,
         answer_content,
         answer_voteup_count,
-        answer_updated_time
+        answer_updated_time,
+        answer_created_time
     ):
 
         self.author_name = author_name
@@ -41,6 +42,7 @@ class AnswerInfo:
         self.answer_content = answer_content
         self.answer_voteup_count = answer_voteup_count
         self.answer_updated_time=answer_updated_time
+        self.answer_created_time=answer_created_time
 
     def read_files():
         answer_infos = []
@@ -67,6 +69,8 @@ class AnswerInfo:
                         answer_voteup_count = answer['target']['voteup_count']
                         timestamp=answer['target']['updated_time']
                         answer_updated_time= datetime.datetime.utcfromtimestamp(timestamp)
+                        timestamp=answer['target']['created_time']
+                        answer_created_time=datetime.datetime.utcfromtimestamp(timestamp)
                         # logger.info(author_name)
                         # logger.info(author_url_token)
                         # logger.info(author_type)
@@ -79,6 +83,7 @@ class AnswerInfo:
                         logger.info(answer_content)
                         # logger.info(answer_voteup_count)
                         # logger.info(answer_updated_time)
+                        # logger.info(answer_created_time)
                         answer_info = AnswerInfo(
                             author_name=author_name,
                             author_url_token=author_url_token,
@@ -92,6 +97,7 @@ class AnswerInfo:
                             answer_content=answer_content,
                             answer_voteup_count=answer_voteup_count,
                             answer_updated_time=answer_updated_time,
+                            answer_created_time=answer_created_time,
                         )
                         answer_infos.append(answer_info)
         sorted_answer_infos = sorted(
