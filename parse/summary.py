@@ -27,7 +27,9 @@ class AnswerInfo:
         answer_content,
         answer_voteup_count,
         answer_updated_time,
-        answer_created_time
+        answer_created_time,
+        label,
+        sumtext
     ):
 
         self.author_name = author_name
@@ -43,6 +45,8 @@ class AnswerInfo:
         self.answer_voteup_count = answer_voteup_count
         self.answer_updated_time=answer_updated_time
         self.answer_created_time=answer_created_time
+        self.label=label
+        self.sumtext=sumtext
 
     def read_files():
         answer_infos = []
@@ -98,6 +102,8 @@ class AnswerInfo:
                             answer_voteup_count=answer_voteup_count,
                             answer_updated_time=answer_updated_time,
                             answer_created_time=answer_created_time,
+                            label="",
+                            sumtext=""
                         )
                         answer_infos.append(answer_info)
         sorted_answer_infos = sorted(
