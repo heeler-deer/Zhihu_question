@@ -148,11 +148,12 @@ class QuestionInfo:
                                     max_comment_answer=max_comment_answer, sum_vote_count=sum_vote_count,
                                     max_vote_count=max_vote_count, max_vote_count_answer=max_vote_count_answer)
         return questioninfo
-        pass
+        
 
     def stratify_answers_by_votes(answer_infos):
         # get votes and sort by 4% 1/1,26% 1/5,70% 1/7
-
+        if (len(answer_infos)<50):
+            return answer_infos
         answer_cnt = len(answer_infos)
         high_answer_cnt = int(answer_cnt*0.04)
         middle_answer_cnt = int(answer_cnt*0.26)-high_answer_cnt
@@ -177,10 +178,11 @@ class QuestionInfo:
             answer_id.append(random_integer)
             low_index += 1
         sorted_answer_id = sorted(answer_id)
-        result = [answer_infos[i] for i in sorted_answer_id]
-        return result
+        sorted_answer_id=list(set(sorted_answer_id))
+        result_answer_infos = [answer_infos[i] for i in sorted_answer_id]
+        logger.info(len(result_answer_infos))
+        return result_answer_infos
 
 
 if __name__ == "__main__":
-    AnswerInfo.read_files()
     pass
