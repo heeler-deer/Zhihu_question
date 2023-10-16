@@ -51,7 +51,7 @@ class AnswerInfo:
     def read_files():
         answer_infos = []
         data = ""
-        with open('../spider/spider/test.json', 'r') as file:
+        with open('../spider/spider/question.json', 'r') as file:
             data = json.load(file)
         for item in data:
             if 'data' in item:
